@@ -28,7 +28,7 @@ RUN apt-get update -y \
 # Get and install conductor
 RUN git clone https://github.com/Netflix/conductor.git \
   && cd conductor \
-  && ./gradlew build \
+  && ./gradlew build -x test \
 
   # Get Server Jar
   && mv ./server/build/libs/conductor-server-*-all.jar /app/libs/ \
